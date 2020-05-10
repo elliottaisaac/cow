@@ -110,7 +110,7 @@ function learnmore(){
 
 //homepage animated text typing --------------------------------------------------------------------->
 if(document.querySelector("#typing")){
-    const Typing = document.querySelector("#typing");
+    var Typing = document.querySelector("#typing");
     var copy;
     var cycle = 0;
     var backspacing;
@@ -162,7 +162,7 @@ if(document.querySelector("#typing")){
     } 
 
     //blinks the cursor
-    const cursor = document.querySelector("#cursorSVG");
+    var cursor = document.querySelector("#cursorSVG");
     cursor.classList.add("hidden");
     var blinking;
     setInterval( () => {
