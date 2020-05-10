@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
+	<title>Cow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.typekit.net/hpl3pdc.css">
+	<script src="ellibrary.js"></script>
+</head>
+<body>
+<header>
+	<span class="spacer72"></span>
+	<nav>
+		<div id="navbar">
+			<div id="masthead">
+				<a href="index.html" id="navLogo"></a>
+				<div id="navMenu">
+					<div id="hamburger">
+						<svg width="40" height="4"><rect width="40" height="4" style="fill:rgb(255,255,255);"/></svg>
+						<svg width="40" height="4"><rect width="40" height="4" style="fill:rgb(255,255,255);"/></svg>
+						<svg width="40" height="4"><rect width="40" height="4" style="fill:rgb(255,255,255);"/></svg>
+					</div>
+					<ul id="hamburgerMenu">
+                        <li><a href="" class="navLink">Log In</a></li>
+						<li><a href="#" class="navLink">Bank</a></li>
+						<li><a href="#" class="navLink">Invest</a></li>
+						<li><a href="#" class="navLink">Budget</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main>
+    <div id="signUp" class="logIn">
+        <h3>Welcome back!</h3>
+        <input type="text" autocomplete="off" id="username" placeholder="enter your username">
+        <input type="password" id="password" placeholder="enter your password">
+        <button>Log in</button>
+    </div>
+</main>
+
+<script src="js/script.js"></script>	
+<script>
+
+document.querySelector(".logIn button").addEventListener("click", () => {
+	for(i = 0; i < users.length; i++){
+        if(document.querySelector("#username").value == users[i].username){
+			if(users[i].password == document.querySelector("#password").value){
+				localStorage.setItem("LOGGEDIN", true);
+				window.location.href = "dashboard.html";
+			}
+			else{
+				document.querySelector("#password").value = ""; 
+				document.querySelector("#password").placeholder = "incorrect password"; 
+			}
+		}
+		else{
+			document.querySelector("#username").value = ""; 
+			document.querySelector("#username").placeholder = "username not found";
+		}
+	}
+});
+</script>
+</body>
+</html>
