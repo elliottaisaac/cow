@@ -103,6 +103,10 @@
         line-height: 100%;
     }
 
+    #signUp button{
+        width: 33%;;
+    }
+
     .logIn button{
         width:35% !important;
     }

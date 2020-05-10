@@ -186,8 +186,9 @@ if(document.querySelector("#typing")){
 //sign up -------------------------------------------------------------------->
 let available = false;
 document.querySelector("#signUp button").addEventListener("click", () => {
+    enteredUsername = document.querySelector("#username").value;
     for(i = 0; i <= users.length; i++){
-        if(users[i] && document.querySelector("#username").value == users[i].username){
+        if(users[i] && enteredUsername == users[i].username){
             document.querySelector("#username").value = ""; 
             document.querySelector("#username").placeholder = "That username is taken, sorry!"; 
         }
@@ -207,7 +208,4 @@ document.querySelector("#signUp button").addEventListener("click", () => {
         window.location.href = "dashboard.html";
     }   
 });
-
-
-
 // --------------------------------------------------------------------->
