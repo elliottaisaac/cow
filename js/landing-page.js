@@ -14,9 +14,10 @@ if(!loggedIn || loggedIn == "false"){
     if(isMobile){
         window.scrollTo(0, 0);
         window.addEventListener('scroll', () => {
-            window.scrollTo(0, 0);
+            if(!finished)window.scrollTo(0, 0);
         });
             Moo(-340);
+            finished = true;
     }
     else{
         window.addEventListener('scroll', () => {
