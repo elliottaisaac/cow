@@ -81,15 +81,21 @@ let currentUser;
 let loggedIn = false;
 if(localStorage.getItem("LOGGEDIN") == "true") loggedIn = true;
 if(localStorage.getItem("USERS")) users = JSON.parse(localStorage.getItem('USERS'));
-if(localStorage.getItem("CURRENTUSER")) currentUser = localStorage.getItem('CURRENTUSER');
+if(localStorage.getItem("CURRENTUSER")) currentUser = JSON.parse(localStorage.getItem('CURRENTUSER'));
 
 if(!loggedIn){
     document.querySelector(".navLink:first-child").innerHTML = "Log in";
     document.querySelector(".navLink:first-child").href = "log-in.html";
+    document.querySelectorAll(".navLink").forEach(link =>{
+        link.style.display = "none";
+    });
+    document.querySelector(".navLink:first-child").style.display = "block";
 }
+
 
 document.querySelector(".navLink:first-child").addEventListener("click", () => {
     if(loggedIn){
+
         localStorage.setItem("LOGGEDIN", false);
         window.location.href = "loggedout.html";
     }

@@ -14,7 +14,7 @@ if(!loggedIn || loggedIn == "false"){
     if(isMobile){
         window.scrollTo(0, 0);
         window.addEventListener('scroll', () => {
-            if(!finished)window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
         });
             Moo(-340);
     }
@@ -43,7 +43,10 @@ if(!loggedIn || loggedIn == "false"){
         }, 2);  
     }
 }
-else document.querySelector("#landingPage2Column").style.display = "none";
+else{
+    document.querySelector("#landingPage2Column").style.display = "none";
+    document.querySelector("#signUp").style.display = "none";
+}
 
 
 function CreateCircles(){
@@ -180,15 +183,14 @@ if(document.querySelector("#typing")){
 
 
 //sign up -------------------------------------------------------------------->
+let available = false;
 document.querySelector("#signUp button").addEventListener("click", () => {
-    let available = true;
-    for(i = 0; i < users.length; i++){
-        if(document.querySelector("#username").value == users[i].username){
+    for(i = 0; i <= users.length; i++){
+        if(users[i] && document.querySelector("#username").value == users[i].username){
             document.querySelector("#username").value = ""; 
             document.querySelector("#username").placeholder = "That username is taken, sorry!"; 
-            available = false;
         }
-        else if(document.querySelector("#username").value) available = false;
+        else available = true;
     }
     if(available){
         localStorage.setItem("LOGGEDIN", true);
@@ -196,11 +198,10 @@ document.querySelector("#signUp button").addEventListener("click", () => {
             username: document.querySelector("#username").value,
             password: document.querySelector("#password").value,
             userID: users.length,
-            loggedIn: true
         }
-        currentUser = users[newUser.userID];
-        localStorage.setItem("CURRENTUSER", currentUser);
         users.push(newUser);
+        currentUser = users[newUser.userID];
+        localStorage.setItem("CURRENTUSER", newUser.userID);
         localStorage.setItem("USERS",  JSON.stringify(users));
         window.location.href = "dashboard.html";
     }   

@@ -39,7 +39,7 @@
     cursor: default;
 }
 
-#text1, #text2, #typing, .lm, #goodbye h1{
+#text1, #text2, #typing, .lm, #goodbye h1, #hello, #dashboard h2{
     color:var(--white);
     font-size: 120px;
     position: relative;

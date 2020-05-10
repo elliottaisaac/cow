@@ -34,10 +34,14 @@
 	</nav>
 </header>
 
-<main>
-    <h1><span id="goodbye"></span>
+<main id="dashboard">
+    <h1 id="hello">Hello</h1>
+    <h2>Things you can do:</h2>
 </main>
 
-<script src="js/script.js"></script>	
+<script src="js/script.js"></script>
+<script>
+document.querySelector("#hello").innerHTML += ` ${users[currentUser].username}`;
+</script>
 </body>
 </html>
