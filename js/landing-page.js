@@ -111,13 +111,13 @@ function learnmore(){
 //homepage animated text typing --------------------------------------------------------------------->
 if(document.querySelector("#typing")){
     const Typing = document.querySelector("#typing");
-    let copy;
-    let cycle = 0;
-    let backspacing;
-    let TypedChars;
-    let backspaceTo;
-    let lag;
-    let lag2;
+    var copy;
+    var cycle = 0;
+    var backspacing;
+    var TypedChars;
+    var backspaceTo;
+    var lag;
+    var lag2;
 
     window.addEventListener("load", Type);
     window.addEventListener("resize", Type);
@@ -164,7 +164,7 @@ if(document.querySelector("#typing")){
     //blinks the cursor
     const cursor = document.querySelector("#cursorSVG");
     cursor.classList.add("hidden");
-    let blinking;
+    var blinking;
     setInterval( () => {
         if (blinking == true){
         cursor.classList.remove("hidden"); 
