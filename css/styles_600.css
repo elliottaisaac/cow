@@ -5,6 +5,10 @@
         top: 32px;
         z-index: 2;
     }
+    
+    .wave{
+        background-image: none;
+    }
 
     #navLogo {
         left: -24px;
